@@ -1,6 +1,6 @@
 <?php
 include("config.php");
-session_start();
+//session_start();
 $comm = mysql_query("select name,comment,post_time from comments");
 while($row=mysql_fetch_array($comm)){
 	$name=$row['name'];
