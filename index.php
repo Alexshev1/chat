@@ -110,23 +110,23 @@ $(document).ready(function(){
     	<img src="22.png"/>
     </div>
     <form action="check-login.php" method="post">
-	    <input type="text" placeholder="Username" id="username" name="username" class="username"/>
-	    <input type="password" placeholder="Password" id="password" name="password" class="password"/>
-	    <input type="submit" value="Log In" id="loginbutton" name="loginbutton" class="login"/>
+	    <input type="text" placeholder="Имя пользователя" id="username" name="username" class="username"/>
+	    <input type="password" placeholder="Пароль" id="password" name="password" class="password"/>
+	    <input type="submit" value="Войти" id="loginbutton" name="loginbutton" class="login"/>
     </form>
-    <p style="text-align:center; font-size:14px">Not registered ? <strong style="color:#ff656c" id="show" >Create an account</strong></p>
+    <p style="text-align:center; font-size:14px">Не зарегистрированы? <strong style="color:#ff656c" id="show" >Создать аккаунт</strong></p>
 </div>
 <div class="login-block register-box">
     <div class="logo">
     	<img src="21.png"/>
     </div>
 	<form action="" method="post">    
-	    <input type="text" placeholder="Full Name" id="reg_fullname" name="reg_fullname" class="fullname"/>
-    	<input type="text" placeholder="Username" id="reg_username" name="reg_username" class="username" />
-	    <input type="password" placeholder="Password" id="reg_password" name="reg_password" class="password" />
-		<input type="submit" value="Register" id="newreg" name="newreg" class="login"/>
+	    <input type="text" placeholder="Полное имя" id="reg_fullname" name="reg_fullname" class="fullname"/>
+    	<input type="text" placeholder="Имя пользователя" id="reg_username" name="reg_username" class="username" />
+	    <input type="password" placeholder="Пароль" id="reg_password" name="reg_password" class="password" />
+		<input type="submit" value="Зарегистрироваться" id="newreg" name="newreg" class="login"/>
 	</form>
-    <p style="text-align:center; font-size:14px">Have an account ? <strong style="color:#08C400" id="hide">Sign In</strong></p>
+    <p style="text-align:center; font-size:14px">Уже имеется аккаунт? <strong style="color:#08C400" id="hide">Войти</strong></p>
 <?php
   if (isset($_REQUEST["newreg"]))
   {
@@ -135,7 +135,7 @@ $(document).ready(function(){
 	  $rp=$_POST["reg_password"];
 	    
 $q="insert into user (regfullname,regusername,regpassword) values ('$rf','$ru','$rp')";
-header('location:chat.php');
+header('location:index.php'); // зарегался и перекинулся на главную
 mysql_query($q);
   }
 ?>
